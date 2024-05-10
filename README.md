@@ -26,4 +26,10 @@ Change config in configs/default.json
 
 ## Dataset
 
-Refer to https://github.com/maximeraafat/BlenderNeRF
+We use BlenderNerf, a Blender add-on for rendering nerf required format dataset: https://github.com/maximeraafat/BlenderNeRF
+
+## Results
+
+https://github.com/Zihan53/Snerfs/assets/58449144/ffcae748-e93c-436a-9d79-4a74c29c7190
+
+
