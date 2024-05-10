@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import os
 import json
-import splitfolders
+import shutil
 
 
 from PIL import Image
@@ -12,8 +12,18 @@ class MayaPreprocessorFolder:
     def __init__(self):
         self.focal = 30
         
-    def split_train_test():
-        splitfolders.ratio('data/sofa', output="data/sofa/output", seed=1337, ratio=(.8, 0.2, 0.0), move=True) 
+    def split_train_test(train_test_ratio):
+        
+        for image in range(618):
+            curr_file_path = 'data/sofa/' + str(image) + '.png'
+            new_file_path = 'data/sofa/'
+
+            if random.uniform(0, 1) >= train_test_ratio:
+                new_file_path += 'test'
+            else:
+                new_file_path += 'train'
+            shutil.move(curr_file_path, new_file_path)
+
 
     def load_train_data(self, path):
         
@@ -50,4 +60,5 @@ class MayaPreprocessorFolder:
         
 
         
-
+mpf = MayaPreprocessorFolder()
+mpf.split_train_test()
