@@ -1,0 +1,3 @@
+from maya_preprocess_folder import MayaPreprocessorFolder
+
+MayaPreprocessorFolder.split_train_test()
